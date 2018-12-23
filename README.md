@@ -86,6 +86,12 @@ rosdep install --from-paths src --ignore-src --rosdistro kinetic -y --skip-keys=
 ./src/catkin/bin/catkin_make_isolated --install -DCMAKE_BUILD_TYPE=Release -DCMAKE_FIND_FRAMEWORK=LAST -DCATKIN_ENABLE_TESTING=0
 ```
 
+- Set up environment valuable for roscore
+```console
+export ROS_HOSTNAME=localhost
+export ROS_MASTER_URI=http://localhost:11311
+```
+
 - Add this to ~/.bash_profile and source it or reopen the console
 ```console
 source Path_that_you_use/ros_catkin_ws/devel_isolated/setup.bash
@@ -156,6 +162,9 @@ fatal error:’boost/tr1/unordered_set.hpp’ file not found
 Solution : change ’boost/tr1/unordered_set.hpp’ in every head or cpp files to ’boost/unordered_set.hpp’ (yeah just delete 'tr1/'
 ```
 
-
+- logError or logWarn not in the scope
+```console
+Solution : Replace every "logError" or "logWarn cmake found with "CONSOLE_BRIDGE_logError" or "CONSOLE_BRIDGE_logWarn"
+```
 
 
