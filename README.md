@@ -1,5 +1,5 @@
 # ros-kinetic-mac
-Build ros kinetic on Mac(mojave)
+Build ros kinetic on Mac(mojave 10.14.2)
 
 - Install homebrew in command line
 ```console
@@ -84,5 +84,21 @@ rosdep install --from-paths src --ignore-src --rosdistro kinetic -y --skip-keys=
 - Build
 ```console
 ./src/catkin/bin/catkin_make_isolated --install -DCMAKE_BUILD_TYPE=Release -DCMAKE_FIND_FRAMEWORK=LAST -DCATKIN_ENABLE_TESTING=0
+```
+>
+>
+>
+
+##Error during setting up and solutions
+- Linking error:
+```console
+ld: library not found for ~~~
+```
+```console
+Solution : 
+1) install the dependence if you haven't installed it
+2) if you install it via brew : brew link ~~~
+3) if you don't install it via brew : export LIBRARY_PATH=$LIBRARY_PATH: (place the path you install it here)
+4) if it is a dynamic lib : replace "export LIBRARY_PATH=$LIBRARY_PATH:" to the command the link dynamic lib
 ```
 
