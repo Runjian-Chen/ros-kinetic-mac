@@ -49,3 +49,34 @@ echo "$(brew --prefix)/lib/python2.7/site-packages" >> ~/Library/Python/2.7/lib/
 https://pip.readthedocs.io/en/stable/installing/
 ```
 
+- Install python tools
+```console
+sudo -H pip install -U wstool rosdep rosinstall rosinstall_generator rospkg catkin-pkg Distribute sphinx
+```
+
+- Init
+```console
+sudo rosdep init
+rosdep update
+```
+
+- Build up workspace
+```console
+mkdir Path_that_you_use/ros_catkin_ws
+cd Path_that_you_use/ros_catkin_ws
+```
+
+- Download installer(replace destop_full with desktop or ros_comm to download different installer if you need)
+```console
+rosinstall_generator desktop_full --rosdistro kinetic --deps --wet-only --tar > kinetic-desktop-full-wet.rosinstall
+```
+
+- Install
+```console
+wstool init -j8 src kinetic-desktop-full-wet.rosinstall
+```
+
+- Analyse dependence (add --skip-keys="~" to skip everything that fails to install and install those with brew, linking them as well)
+```console
+rosdep install --from-paths src --ignore-src --rosdistro kinetic -y --skip-keys="google-mock" --skip-keys="python-wxtools" --skip-keys="qt" --skip-keys="gazebo" --skip-keys libogre-dev --skip-keys "libqt5-core libqt5-gui libqt5-opengl libqt5-opengl-dev libqt5-widgets qt5-qmake qtbase5-dev python-qt5-bindings-webkit"
+```
