@@ -80,3 +80,9 @@ wstool init -j8 src kinetic-desktop-full-wet.rosinstall
 ```console
 rosdep install --from-paths src --ignore-src --rosdistro kinetic -y --skip-keys="google-mock" --skip-keys="python-wxtools" --skip-keys="qt" --skip-keys="gazebo" --skip-keys libogre-dev --skip-keys "libqt5-core libqt5-gui libqt5-opengl libqt5-opengl-dev libqt5-widgets qt5-qmake qtbase5-dev python-qt5-bindings-webkit"
 ```
+
+- Build
+```console
+./src/catkin/bin/catkin_make_isolated --install -DCMAKE_BUILD_TYPE=Release -DCMAKE_FIND_FRAMEWORK=LAST -DCATKIN_ENABLE_TESTING=0
+```
+
