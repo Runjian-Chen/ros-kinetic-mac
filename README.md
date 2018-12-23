@@ -21,7 +21,7 @@ brew info python
 ```console
 /System/Library/Frameworks/Python.framework
 ```
->> To paste in the following path (mkdir python@2 and Frameworks)
+  To paste in the following path (mkdir python@2 and Frameworks)
 ```console
 /usr/local/opt/python@2/Frameworks/
 ```
