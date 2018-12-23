@@ -1,6 +1,8 @@
 # ros-kinetic-mac
 Build ros kinetic on Mac(mojave 10.14.2)
 
+## Step for installation
+
 - Install homebrew in command line
 ```console
 /usr/bin/ruby -e "$(curl -fsSL https://raw.githubusercontent.com/Homebrew/install/master/install)
@@ -110,7 +112,7 @@ Path_that_you_use/ros_catkin_ws/install_isolated/lib
 >
 >
 
-#Error during setting up and solutions
+## Error during setting up and solutions
 - Linking error:
 ```console
 ld: library not found for ~~~
