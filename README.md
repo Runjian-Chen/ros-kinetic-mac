@@ -14,7 +14,7 @@ brew uninstall python
 brew uninstall python@2
 ```
 
-- Check if there is only python which the systems relies on
+- Check
 ```console
 brew info python
 ```
@@ -27,7 +27,7 @@ brew info python
 ```console
 /usr/local/opt/python@2/Frameworks/
 ```
-
+if
 - Add repositories
 ```console
 brew tap ros/deps
