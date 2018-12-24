@@ -112,7 +112,7 @@ Path_that_you_use/ros_catkin_ws/install_isolated/lib
 >
 >
 
-## Error during setting up and solutions
+## Error and solutions
 - Linking error:
 ```console
 ld: library not found for ~~~
